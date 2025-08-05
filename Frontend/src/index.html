@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+            </div>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2">Home</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Features</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Pricing</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">FAQs</a></li>
+                <li><a href="#" class="nav-link px-2">About</a>
+                </li>
+            </ul>
+            <div class="col-md-3 text-end" id="authButtons">
+                <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastre-se</a>
+            </div>
+
+        </header>
+    </div>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Bem-vindo(a) ao Sistema!</h1>
+                <p class="col-md-8 fs-4 mx-auto">
+                    Você acessou a página principal com sucesso.
+                    Aqui, você pode navegar pelas funcionalidades do sistema.
+                </p>
+                <button class="btn btn-primary btn-lg mt-3" type="button">
+                    Começar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userProfileSection = document.getElementById('authButtons');
+            const user = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+            if (user && user.token) {
+                // Se o usuário estiver logado, exibe o perfil e o botão Sair
+                const userProfilePicture = './assets/defaltUser.png';
+                userProfileSection.innerHTML = `
+    <div class="d-flex align-items-center gap-2">
+        <img src="${userProfilePicture}" alt="Foto do Usuário" class="rounded-circle border border-2 border-primary" width="40" height="40">
+        <div class="text-end">
+            <div class="fw-semibold">${user.name}</div>
+            <a href="#" id="logoutButton" class="btn btn-outline-danger btn-sm mt-1">Sair</a>
+        </div>
+    </div>
+`;
+
+
+                // Adiciona a funcionalidade de logout
+                document.getElementById('logoutButton').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('usuarioLogado'); // Remove o item do localStorage
+                    window.location.href = 'login.html'; // Redireciona para o login
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

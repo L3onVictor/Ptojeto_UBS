@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+            </div>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2">Home</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Features</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">Pricing</a>
+                </li>
+                <li><a href="#" class="nav-link px-2">FAQs</a></li>
+                <li><a href="#" class="nav-link px-2">About</a>
+                </li>
+            </ul>
+            <div class="col-md-3 text-end">
+                <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastre-se</a>
+            </div>
+
+        </header>
+    </div>
+    </header>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Cadastro</h2>
+        <form id="cadastroForm">
+            <!-- Nome -->
+            <div class="mb-3">
+                <label for="nomeInput" class="form-label">Nome completo</label>
+                <input type="text" class="form-control" id="nomeInput" placeholder="Digite seu nome" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="emailInput" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Digite seu email" required>
+            </div>
+
+            <!-- CPF -->
+            <div class="mb-3">
+                <label for="cpfInput" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpfInput" placeholder="Digite seu CPF (somente números)"
+                    maxlength="11" pattern="\d{11}" title="Digite apenas 11 números" required>
+            </div>
+
+            <!-- Senha -->
+            <div class="mb-3">
+                <label for="senhaInput" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senhaInput" placeholder="Crie uma senha" required
+                    minlength="6">
+            </div>
+
+            <!-- Botão -->
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+    <p class="text-center">Já está cadastrado?
+        <a href="login.html">Entre na sua conta</a>
+    </p>
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="./js/serviceJS/cadastro.js"></script>
+</body>
+
+</html>
