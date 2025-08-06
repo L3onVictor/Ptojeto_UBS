@@ -1,16 +1,13 @@
 import sequelize from '../src/config/db.js';
-import User from '../src/models/users.js'; // ajuste o path se necessário
+import User from '../src/models/users.js';
 import bcrypt from 'bcrypt';
 
 async function seed() {
   try {
-    // Sincroniza o banco (cria a tabela se não existir)
-    await sequelize.sync(); // cuidado: isso apaga e recria as tabelas
+    await sequelize.sync();
 
-    // Criptografa uma senha
     const hashedPassword = await bcrypt.hash('123456', 10);
 
-    // Cria um usuário de teste
     await User.create({
       name: 'Usuário Teste',
       email: 'teste@teste.com',
@@ -19,11 +16,20 @@ async function seed() {
     });
 
     console.log('Seed finalizado com sucesso!');
-    process.exit(0); // finaliza o processo
+    process.exit(0); 
   } catch (error) {
     console.error('Erro ao executar o seed:', error);
     process.exit(1);
   }
 }
+/*
+async function deleteUser(id) {
+  const deletedUserCount = await User.destroy({
+    where: { id }
+  });
+}
+
+deleteUser(6) 
+*/
 
 seed();

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const AUTH_SERVICE_URL = 'http://localhost:3001' // Porta do auth_service
+const AUTH_SERVICE_URL = 'http://localhost:3001'
 
 const authController = {
   async login(req, res) {

@@ -1,5 +1,3 @@
-// src/controllers/authController.js
-
 import authService from '../services/authService.js';
 
 const register = async (req, res) => {

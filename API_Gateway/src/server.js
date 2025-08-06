@@ -13,7 +13,6 @@ const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL || 'http://localhost:3001'
 app.use(cors());
 app.use(express.json());
 
-// Proxy manual via axios para /register
 app.post('/api/auth/register', async (req, res) => {
   try {
     const response = await axios.post(`${AUTH_SERVICE_URL}/auth/register`, req.body);
@@ -25,7 +24,6 @@ app.post('/api/auth/register', async (req, res) => {
   }
 });
 
-// Proxy manual via axios para /login
 app.post('/api/auth/login', async (req, res) => {
   try {
     const response = await axios.post(`${AUTH_SERVICE_URL}/auth/login`, req.body);

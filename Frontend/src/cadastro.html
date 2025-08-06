@@ -44,33 +44,28 @@
     <div class="container mt-5">
         <h2 class="mb-4">Cadastro</h2>
         <form id="cadastroForm">
-            <!-- Nome -->
             <div class="mb-3">
                 <label for="nomeInput" class="form-label">Nome completo</label>
                 <input type="text" class="form-control" id="nomeInput" placeholder="Digite seu nome" required>
             </div>
 
-            <!-- Email -->
             <div class="mb-3">
                 <label for="emailInput" class="form-label">Email</label>
                 <input type="email" class="form-control" id="emailInput" placeholder="Digite seu email" required>
             </div>
 
-            <!-- CPF -->
             <div class="mb-3">
                 <label for="cpfInput" class="form-label">CPF</label>
                 <input type="text" class="form-control" id="cpfInput" placeholder="Digite seu CPF (somente números)"
                     maxlength="11" pattern="\d{11}" title="Digite apenas 11 números" required>
             </div>
 
-            <!-- Senha -->
             <div class="mb-3">
                 <label for="senhaInput" class="form-label">Senha</label>
                 <input type="password" class="form-control" id="senhaInput" placeholder="Crie uma senha" required
                     minlength="6">
             </div>
 
-            <!-- Botão -->
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>

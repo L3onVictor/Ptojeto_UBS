@@ -8,7 +8,6 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 8080;
 
-// Serve os arquivos estáticos da pasta 'src'
 app.use(express.static(path.join(__dirname, 'src')));
 
 app.get('/', (req, res) => {

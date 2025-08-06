@@ -21,8 +21,6 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         const result = await response.json();
 
         if (response.ok) {
-            // AQUI ESTÁ A CORREÇÃO:
-            // JSON (com J maiúsculo) é um objeto global e não precisa ser importado.
             localStorage.setItem('usuarioLogado', JSON.stringify(result));
 
             alert('Login efetuado com sucesso!');

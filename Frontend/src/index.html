@@ -62,7 +62,6 @@
             const user = JSON.parse(localStorage.getItem('usuarioLogado'));
 
             if (user && user.token) {
-                // Se o usuário estiver logado, exibe o perfil e o botão Sair
                 const userProfilePicture = './assets/defaltUser.png';
                 userProfileSection.innerHTML = `
     <div class="d-flex align-items-center gap-2">
@@ -75,11 +74,10 @@
 `;
 
 
-                // Adiciona a funcionalidade de logout
                 document.getElementById('logoutButton').addEventListener('click', (e) => {
                     e.preventDefault();
-                    localStorage.removeItem('usuarioLogado'); // Remove o item do localStorage
-                    window.location.href = 'login.html'; // Redireciona para o login
+                    localStorage.removeItem('usuarioLogado');
+                    window.location.href = 'login.html';
                 });
             }
         });

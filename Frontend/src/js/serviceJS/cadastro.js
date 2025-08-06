@@ -1,5 +1,5 @@
 document.getElementById('cadastroForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
+    event.preventDefault();
 
     const nome = document.getElementById('nomeInput').value;
     const email = document.getElementById('emailInput').value;
@@ -26,7 +26,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
     
     if (response.ok) {
         alert('Cadastro realizado com sucesso!');
-        // Redireciona para a página de login após o sucesso
+        // Redireciona para a página de login
         window.location.href = 'login.html'; 
     } else {
         alert('Erro no cadastro: ' + result.error);
